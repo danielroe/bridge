@@ -35,7 +35,7 @@ jobs:
         run: pnpm build
 
       - name: Cache dist
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: packages/*/dist
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-${{ github.sha }}
@@ -172,7 +172,7 @@ jobs:
         run: pnpm install
 
       - name: Restore dist cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: packages/*/dist
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-${{ github.sha }}
